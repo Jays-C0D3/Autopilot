@@ -12,30 +12,23 @@ echo "-------------------------------------------"
 
 #######################################################################################
 
-filename='autopilot.txt'
+filename='autorecon.txt'
 
 read -p ' Enter Target: ' tarvar
 
-echo "-----------------------------------"
+mkdir /root/bountyz/$tarvar
 
-read -p 'Enter Path to Wordlist: ' worvar
+echo "-----------------------------------"
 
 echo "###########################################"
 echo "| Starting recon on $tarvar now . . .     |"
 echo "| ________________________________________|"
 
-subfinder -d $tarvar -o $filename &
-amass enum -o $filename -d $tarvar;
-
+./subfinder -d $tarvar -o $filename
 sleep 0.5
 
-sort -u $filename;
+sort -u $filename | uniq > subz.txt;
 
-altdns -i $filename -o altsubz.txt -w $worvar -r -s resaltnz.txt;
-
-rm altsubz.txt;
-
-sort -u resaltnz.txt;
 
 #######################################################################################
 
@@ -57,30 +50,50 @@ echo " |        /       \       |"
 echo " __________________________"
 
 
-#######################################################################################
+echo '############################### Checking-For-Resolved-Subz ###################################'
+
+while IFS= read -r line;
+do
+	host $line >> host.txt
+	cat host.txt | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' >> scanipz.txt
+done < $filename
+
+
+sort -u scanipz.txt | uniq > ipz.txt
+
+echo "#"
+
+sleep 0.3
+
+echo "##"
+
+sleep 0.2
+
+echo "###"
+
+sleep 0.1
+
+echo "#### ! IPz collected and stored ! ####"
+
+
+###################################################################################################
 
 
 echo '#########################( S-C-A-N-N-I-N-G [F-0-R] P-O-R-T-S )#########################'
 
 while IFS= read -r line;
 do
-        nmap -p 80,443 --script http-waf-detect --script-args="http-waf-detect.aggro,http-waf-detect.detectBodyChanges" $line >> autoports.txt &
-        nmap -A $line >> autoreports.txt &
-        nmap -sV $line >> autoreports.txt &
-        nmap -F $line >> autoreports.txt &
+        nmap -Pn -sT -sV -p0-65535 $line >> nres.txt;
 
-done < $filename
+done < ipz.txt
 
-sleep 2.5
+echo " Files are in $tarvar folder ... "
 
-echo "<<<<<<<<<<<<<<<<<<<<<<<<><<<<<<| NMAP STILL RUNNING . . . |>>>>>><>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+mkdir /root/bountyz/$tarvar/subz
+mkdir /root/bountyz/$tarvar/netwxrk
 
-while IFS= read -r line;
-do
-        nmap -p 80,443 --script http-waf-detect --script-args="http-waf-detect.aggro,http-waf-detect.detectBodyChanges" $line >> autoports.txt
-        nmap -A $line >> autoreports.txt &
-        nmap -sV $line >> autoreports.txt &
-        nmap -F $line >> autoreports.txt &
-done < resaltnz.txt
+rm $filename host.txt
 
-sleep 1.5
+mv subz.txt /root/bountyz/$tarvar/subz
+mv nres.txt /root/bountyz/$tarvar/netwxrk
+mv ipz.txt /root/bountyz/$tarvar/netwxrk
