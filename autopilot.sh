@@ -26,6 +26,8 @@ GO111MODULE=on go get -v github.com/projectdicovery/subfinder/v2/cmd/subfinder
 
 filename='autorecon.txt'
 
+echo '_______________________________________________________________'
+
 read -p ' Enter Target: ' tarvar
 
 mkdir /root/bountyz/$tarvar
