@@ -38,7 +38,8 @@ echo "###########################################"
 echo "| Starting recon on $tarvar now . . .     |"
 echo "| ________________________________________|"
 
-./subfinder -d $tarvar -o $filename
+subfinder -d $tarvar -o $filename
+
 sleep 0.5
 
 sort -u $filename | uniq > subz.txt;
