@@ -103,11 +103,13 @@ done < ipz.txt
 
 echo " Files are in $tarvar folder ... "
 
-mkdir /root/bountyz/$tarvar/subz
-mkdir /root/bountyz/$tarvar/ports
-
 rm $filename host.txt
 
-mv subz.txt /root/bountyz/$tarvar/subz
-mv nres.txt /root/bountyz/$tarvar/ports
-mv ipz.txt /root/bountyz/$tarvar/ports
+mkdir $tarvar
+cd $tarvar
+mkdir subz ports
+
+
+mv subz.txt /root/$tarvar/subz
+mv nmapres.txt /root/$tarvar/ports
+mv ipz.txt /root/b$tarvar/ports
