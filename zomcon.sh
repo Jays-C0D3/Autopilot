@@ -2,12 +2,24 @@
 #######################################################################################
 
 
-echo "(-----/ Welcome to Autopilot \----)"
+echo "(-----/ Autopilot Commenced \-----)"
 echo "(_________<<<<<</>>>>>>>__________)"
 echo "|_________________________________|"
 echo "|------[###################]------|"
 
 echo "-------------------------------------------"
+
+
+######################################################################################
+
+apt uppdate && apt upgrade -y
+
+apt install golang nmap -y
+
+#Install Subfinder
+
+
+GO111MODULE=on go get -v github.com/projectdicovery/subfinder/v2/cmd/subfinder
 
 
 #######################################################################################
@@ -90,10 +102,10 @@ done < ipz.txt
 echo " Files are in $tarvar folder ... "
 
 mkdir /root/bountyz/$tarvar/subz
-mkdir /root/bountyz/$tarvar/netwxrk
+mkdir /root/bountyz/$tarvar/ports
 
 rm $filename host.txt
 
 mv subz.txt /root/bountyz/$tarvar/subz
-mv nres.txt /root/bountyz/$tarvar/netwxrk
-mv ipz.txt /root/bountyz/$tarvar/netwxrk
+mv nres.txt /root/bountyz/$tarvar/ports
+mv ipz.txt /root/bountyz/$tarvar/ports
