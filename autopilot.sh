@@ -12,7 +12,7 @@ echo "---------BY:\n000b-n000b/----------"
 
 ######################################################################################
 
-apt uppdate && apt upgrade -y
+apt update && apt upgrade -y
 
 apt install golang nmap -y
 
@@ -98,7 +98,7 @@ echo '#########################( S-C-A-N-N-I-N-G [F-0-R] P-O-R-T-S )############
 
 while IFS= read -r line;
 do
-        masscan $line -p0-1900 >> nres.txt;
+        masscan $line -p0-19000 >> nres.txt;
 
 done < ipz.txt
 
