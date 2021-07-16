@@ -2,7 +2,7 @@
 #######################################################################################
 
 
-echo "(-----/ Autopilot Commenced \-----)"
+echo "(-----/ Autopilot Activated \-----)"
 echo "(_________<<<<<</>>>>>>>__________)"
 echo "|_________________________________|"
 echo "|------[###################]------|"
@@ -14,13 +14,7 @@ echo "---------BY:\n000b-n000b/----------"
 
 apt update && apt upgrade -y
 
-apt install golang nmap -y
-
-#Install Subfinder
-
-
-GO111MODULE=on go get -v github.com/projectdicovery/subfinder/v2/cmd/subfinder
-
+apt install golang nmap subfinder theharvester python3 -y
 
 #######################################################################################
 
@@ -65,7 +59,7 @@ echo " |        /       \       |"
 echo " __________________________"
 
 
-echo '############################### Checking-For-Resolved-Subz ###################################'
+echo '############################### Checking-For-Resolved-Subz ###################################' 
 
 while IFS= read -r line;
 do
@@ -98,7 +92,7 @@ echo '#########################( S-C-A-N-N-I-N-G [F-0-R] P-O-R-T-S )############
 
 while IFS= read -r line;
 do
-        masscan $line -p0-19000 >> nres.txt;
+        nmap -F $line >> nres.txt;
 
 done < ipz.txt
 
