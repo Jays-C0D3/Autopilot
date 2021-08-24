@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+
 #######################################################################################
 
 
@@ -7,104 +8,190 @@ echo "(_________<<<<<</>>>>>>>__________)"
 echo "|_________________________________|"
 echo "|------[###################]------|"
 
-echo "---------BY:\n000b-n000b/----------"
+echo "-----| Twitter: @n00b_n00b_ |------"
+
+echo "+++++++++++++++++++++++++++++++++++"
+
+echo " "
+
+echo " Gr3at thnx to Twitter @Sw33tLie bbscope "
+
+echo "____________________________________________________________"
+
+echo " "
+
+echo " This tool requires bbscope and usually an active h1 API key"
+
+echo "____________________________________________________________________________________"
+
+echo " "
+
+echo "| Please install with command: GO111MODULE=on go get -u github.com/sw33tLie/bbscope |"
+
+echo "-------------------------------------------------------------------------------------"
 
 
-######################################################################################
+#########################################################################################
+
 
 apt update && apt upgrade -y
 
-apt install golang nmap subfinder theharvester python3 -y
+sleep 1
 
-#######################################################################################
-
-filename='autorecon.txt'
-
-echo '_______________________________________________________________'
-
-read -p ' Enter Target: ' tarvar
-
-mkdir /root/bountyz/$tarvar
-
-echo "-----------------------------------"
-
-echo "###########################################"
-echo "| Starting recon on $tarvar now . . .     |"
-echo "| ________________________________________|"
-
-subfinder -d $tarvar -o $filename
+apt autoremove -y
 
 sleep 0.5
 
-sort -u $filename | uniq > subz.txt;
+
+#Confirm bbscope installation
 
 
-#######################################################################################
-
-echo "{----------------------------------------------------------}"
-echo "| Sorting discovered domains and removing duplicates . . . |"
-echo "|__________________________________________________________|"
-
-sleep 1.5
-
-#######################################################################################
+########################################################################################
 
 
-echo " |        ---------       |"
-echo " |. . . . <Phase 2> . . . |"
-echo " --------------------------"
-echo " |        /       \       |"
-echo " |        <Starting>      |"
-echo " |        /       \       |"
-echo " __________________________"
+h1auth=$(cat /home/n000bn000b/.pass/h1-auth)
 
+echo ###################################################################################
 
-echo '############################### Checking-For-Resolved-Subz ###################################' 
-
-while IFS= read -r line;
-do
-	host $line >> host.txt
-	cat host.txt | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' >> scanipz.txt
-done < $filename
-
-
-sort -u scanipz.txt | uniq > ipz.txt
-
-echo "#"
-
-sleep 0.3
-
-echo "##"
-
-sleep 0.2
-
-echo "###"
+echo Scanning the H1 Database ! ! !
+echo "%"
 
 sleep 0.1
 
-echo "#### ! IPz collected and stored ! ####"
+echo "%-"
 
+sleep 0.2
 
-###################################################################################################
+echo "%--%"
 
+sleep 0.3
 
-echo '#########################( S-C-A-N-N-I-N-G [F-0-R] P-O-R-T-S )#########################'
+echo "%--%-"
+
+sleep 0.4
+
+echo "%--%-%"
+
+sleep 0.5
+
+echo "%--%-%--"
+
+sleep 0.6
+
+echo "%--%-%--%-"
+
+sleep 0.7
+
+echo "%--%-%--%--%"
+
+sleep 0.8
+
+echo "%--%-%--%--%-"
+
+sleep 0.9
+
+echo "%--%-%--%--%-%--"
+
+sleep 1.0
+
+echo "%--%-%--%--%-%--%-"
+
+sleep 1.1
+
+echo "%--%-%--%--%-%--%-%--"
+
+sleep 1.2
+
+echo "%--%-%--%--%-%--%-%--%"
+
+bbscope h1 -t $h1auth -u r3vlm -c url -b >> scope
+
+echo "___________________________________________"
+
+echo "--- UPDAT3D H1 SCOP3s STR3VMING N0W --- ;P "
+
+echo "___________________________________________"
 
 while IFS= read -r line;
 do
-        nmap -F $line >> nres.txt;
+        echo $line
+        sleep 0.5
 
-done < ipz.txt
+done < scope
 
-echo " Files are in $tarvar folder ... "
+sort scope | uniq
 
-rm $filename host.txt
+#Strip Root Domains from scope file and prep for subdomain enumeration
 
-mkdir $tarvar
-cd $tarvar
-mkdir subz ports
+grep "*." scope >> rootdomains.txt
+
+awk -F\. '{print $(NF-1) FS $NF}' rootdomains.txt >> rootdomains.txt
 
 
-mv subz.txt /root/$tarvar/subz
-mv nmapres.txt /root/$tarvar/ports
-mv ipz.txt /root/b$tarvar/ports
+#Initiate subtak3r?
+
+echo "__________________________________________"
+
+echo " Initiating Subtak3r . . . $ubTKO 0_0 . . "
+
+echo "- - - - - - - - - - - - - - - - - - - - - "
+
+echo " "
+
+echo "%"
+
+sleep 0.1
+
+echo "%-"
+
+sleep 0.2
+
+echo "%--%"
+
+sleep 0.3
+
+echo "%--%-"
+
+sleep 0.4
+
+echo "%--%-%"
+
+sleep 0.5
+
+echo "%--%-%--"
+
+sleep 0.6
+
+echo "%--%-%--%-"
+
+sleep 0.7
+
+echo "%--%-%--%--%"
+
+sleep 0.8
+
+echo "%--%-%--%--%-"
+
+sleep 0.9
+
+echo "%--%-%--%--%-%--"
+
+sleep 1.0
+
+echo "%--%-%--%--%-%--%-"
+
+sleep 1.1
+
+echo "%--%-%--%--%-%--%-%--"
+
+sleep 1.2
+
+echo "%--%-%--%--%-%--%-%--%"
+
+sleep 1.3
+
+subfinder -v -nW -d $targetvar -o subz.txt
+
+echo " | Now performing a permutated deep enum via ALTDNS |"
+
+altdns -i subz.txt -o finalsubz.txt -w subz.txt
