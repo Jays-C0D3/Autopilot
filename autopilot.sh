@@ -26,7 +26,7 @@ maintain() {
 	bbscope
 	if [ RESULT== 0 ]; then
 		echo "Necessities verified ! ! !"
-	else:
+	else
 		echo "____________________________________________________________________________________"
 
 		echo " "
@@ -34,6 +34,7 @@ maintain() {
 		echo "| Please install with command: GO111MODULE=on go get -u github.com/sw33tLie/bbscope |"
 
 		echo "-------------------------------------------------------------------------------------"
+	fi
 }
 maintain
 
