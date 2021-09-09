@@ -36,7 +36,6 @@ maintain() {
 		echo "-------------------------------------------------------------------------------------"
 		
 		GO111MODULE=on go get -u github.com/sw33tLie/bbscope
-		mv /go/bin/bbscope /bin
 	fi
 }
 maintain
