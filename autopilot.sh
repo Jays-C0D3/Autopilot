@@ -31,9 +31,11 @@ maintain() {
 
 		echo " "
 
-		echo "| Please install with command: GO111MODULE=on go get -u github.com/sw33tLie/bbscope |"
+		echo "|			MISSING bbscope! ATTEMPTING INSTALL NOW !			 |"
 
 		echo "-------------------------------------------------------------------------------------"
+		
+		GO111MODULE=on go get -u github.com/sw33tLie/bbscope
 	fi
 }
 maintain
