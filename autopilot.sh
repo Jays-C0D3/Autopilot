@@ -24,7 +24,7 @@ maintain() {
 	apt autoremove -y
 	apt install golang
 	bbscope
-	if [ RESULT== 0 ]; then
+	if [ RESULT == 0 ]; then
 		echo "Necessities verified ! ! !"
 	else
 		echo "____________________________________________________________________________________"
