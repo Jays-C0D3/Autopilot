@@ -26,7 +26,7 @@ maintain() {
 	bbscope
 	if [ RESULT== 0 ]; then
 		echo "Necessities verified ! ! !"
-	else;
+	else:
 		echo "____________________________________________________________________________________"
 
 		echo " "
