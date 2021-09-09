@@ -7,37 +7,33 @@ echo "(-----/ Autopilot Activated \-----)"
 echo "(_________<<<<<</>>>>>>>__________)"
 echo "|_________________________________|"
 echo "|------[###################]------|"
-
 echo "-----| Twitter: @n00b_n00b_ |------"
-
 echo "+++++++++++++++++++++++++++++++++++"
-
 echo " "
-
-echo " Gr3at thnx to Twitter @Sw33tLie bbscope "
-
 echo "____________________________________________________________"
-
 echo " "
-
-echo " This tool requires bbscope and an active h1 API key"
-
-echo " "
-
-echo "____________________________________________________________________________________"
-
-echo " "
-
-echo "| Please install with command: GO111MODULE=on go get -u github.com/sw33tLie/bbscope |"
-
-echo "-------------------------------------------------------------------------------------"
-
+echo " - - This tool requires bbscope and an active h1 API key - - "
+echo " - - Updating and Confirming required modules/pkgs . . . . . . ."
+echo "-__________________________________________________________-"
 
 #########################################################################################
+RESULT=$?
 
 maintain() {
 	apt update && apt upgrade -y
 	apt autoremove -y
+	apt install golang
+	bbscope
+	if [ RESULT== 0 ]; then
+		echo "Necessities verified ! ! !"
+	else;
+		echo "____________________________________________________________________________________"
+
+		echo " "
+
+		echo "| Please install with command: GO111MODULE=on go get -u github.com/sw33tLie/bbscope |"
+
+		echo "-------------------------------------------------------------------------------------"
 }
 maintain
 
