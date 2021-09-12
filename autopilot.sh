@@ -80,7 +80,7 @@ echo $BLUE "___________________________________________"
 while IFS= read -r line;
 do
     echo $GRN $line
-	sleep 3
+	sleep 2.5
 done < scope
 
 clean_0(){
