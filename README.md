@@ -6,7 +6,7 @@ PLEASE BE AWARE THAT THIS CODE IS TO PROVIDE A REAL TIME STREAM OF H1 BUGBOUNTY 
 
 It will also save scope find root/sub-domains and the current IPv4 of the subdomains in the specified files.
 
-    1.) scope
+    1.) mainscope
     2.) rootdomains.txt
     3.) subz.txt
     4.) ipz
