@@ -5,6 +5,7 @@ Kudos to https://twitter.com/sw33tLie. Please not that he is the creator of the 
 PLEASE BE AWARE THAT THIS CODE IS TO PROVIDE A REAL TIME STREAM OF H1 BUGBOUNTY SCOPES IN TERMINAL. 
 
 It will also save scope find root/sub-domains and the current IPv4 of the subdomains in the specified files.
+
     1.) scope
     2.) rootdomains.txt
     3.) subz.txt
