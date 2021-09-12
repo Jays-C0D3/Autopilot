@@ -2,7 +2,7 @@ Real time h1 bbscope update tool.
 
 Kudos to https://twitter.com/sw33tLie. Please not that he is the creator of the main tool https://github.com/sw33tLie/bbscope which must be installed and moved to /usr/bin.
 
-PLEASE BE AWARE THAT THIS CODE IS TO PROVIDE A REAL TIME STREAM OF H1 BUGBOUNTY SCOPES IN THE TERMINAL.
+PLEASE BE AWARE THAT THIS CODE IS TO PROVIDE A REAL TIME STREAM OF H1 BUGBOUNTY SCOPES IN TERMINAL.
 YOU MAY MAKE ANY CHANGES TO FIT YOUR SPECIFIC NEEDS AND IF YOU WOULD LIKE TO COMMIT PLEASE FEEL FREE TO MAKE A REQUEST.
 
 
