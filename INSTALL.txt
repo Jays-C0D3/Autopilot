@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo " 1.) Mobile or 2.) PC: "
+echo " 1.)Mobile or 2.)PC : "
 
 read answer
 
@@ -11,12 +11,14 @@ if [$answer == 1]; then
     pkg install golang -y
     GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
     GO111MODULE=on go get -u github.com/sw33tLie/bbscope
+    cd go/bin
+    mv bbscope subfinder /data/data/com.termux/files/usr/bin
   }
   termuxinst
 else
   apt update && apt upgrade -y
   apt install subfinder golang -y
   GO111MODULE=on go get -u github.com/sw33tLie/bbscope
-  echo " BE SURE TO MOVE bbscope to /usr/bin"
+  cd go/bin
+  mv bbscope /usr/bin
 fi
-
