@@ -157,6 +157,6 @@ subtko(){
 }
 subtko
 
-echo $GRN "Created scope / subz.txt / ipz / and rootdomains.txt for review."
+echo $GRN "Created mainscope / subz.txt / ipz / and rootdomains.txt for review."
 
 #################################################################################
