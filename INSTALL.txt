@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo " 1.)Mobile or 2.)PC : "
+echo " 1.) Mobile or 2.) PC : "
 
 read answer
 
