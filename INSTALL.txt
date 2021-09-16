@@ -13,6 +13,7 @@ if [$n==1]; then
     cd /data/data/com.termux/files/home/go/bin
     mv bbscope subfinder /data/data/com.termux/files/usr/bin
   }
+  termuxinst
 elif [$n==2]; then
   apt update && apt upgrade -y
   apt install subfinder golang -y
