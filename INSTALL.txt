@@ -1,9 +1,5 @@
 #!/usr/bin/bash
 
-a=1
-b=2
-
-
 echo " [1]😉Termux or [2]💻: "
 
 read answer
