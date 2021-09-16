@@ -4,7 +4,7 @@ read answer
 if [$answer == 1]; then
 #Maintain and install requirements for Termux
   termuxinst() {
-    pkg install golang -y
+    apt install golang -y
     sleep 1
     GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
     sleep 1
