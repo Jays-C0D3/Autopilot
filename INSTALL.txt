@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 echo " [1]Termux 0r [2]PC: "
 read answer
-if [$answer==1]; then
+if [$answer == 1]; then
 #Maintain and install requirements for Termux
   termuxinst() {
     pkg install golang -y
@@ -14,7 +14,7 @@ if [$answer==1]; then
     mv bbscope subfinder /data/data/com.termux/files/usr/bin
   }
   termuxinst
-elif [$answer==2]; then
+elif [$answer == 2]; then
   apt update && apt upgrade -y
   apt install subfinder golang -y
   GO111MODULE=on go get -u github.com/sw33tLie/bbscope
