@@ -1,7 +1,5 @@
 #!/usr/bin/bash
-
 echo " [1]Termux 0r [2]PC: "
-n=''
 read n
 if [$n == 1]; then
 #Maintain and install requirements for Termux
