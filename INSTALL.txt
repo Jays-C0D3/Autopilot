@@ -4,7 +4,7 @@ echo " [1]😉Termux or [2]💻: "
 
 read answer
 
-if [$answer == a]; then
+if [$answer == 1]; then
 #Maintain and install requirements for Termux
   termuxinst() {
     pkg install golang -y
@@ -17,7 +17,7 @@ if [$answer == a]; then
     mv bbscope subfinder /data/data/com.termux/files/usr/bin
   }
   termuxinst
-elif [$answer == b]; then
+elif [$answer == 2]; then
   apt update && apt upgrade -y
   apt install subfinder golang -y
   GO111MODULE=on go get -u github.com/sw33tLie/bbscope
