@@ -3,7 +3,6 @@ echo " [1]Termux 0r [2]PC: "
 read answer
 if [$answer==1]; then
 #Maintain and install requirements for Termux
-do
   termuxinst() {
     pkg install golang -y
     sleep 0.7
