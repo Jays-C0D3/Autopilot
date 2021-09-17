@@ -1,4 +1,4 @@
-    <h1>Autopilot</h1>
+Autopilot
 
 
 Kudos to https://twitter.com/sw33tLie. Please not that he is the creator of bbscope https://github.com/sw33tLie/bbscope which must be installed along with subfinder and moved to /usr/bin.
