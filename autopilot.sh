@@ -96,7 +96,7 @@ echo $BLUE "________Looking 4 root domains____________ "
 presubTKO(){
 	grep "*." mainscope >> roughroots.txt
 	awk -F\. '{print $(NF-1) FS $NF}' roughroots.txt >> rootdomains.txt
-	rm roughroots
+	rm roughroots.txt
 }
 presubTKO
 
