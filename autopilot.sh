@@ -140,11 +140,14 @@ subsearch(){
 while IFS= read -r root;
 do
 	subfinder -v -nW -d $root -o subz.txt
+	sort subs.txt | uniq >> autosubz.txt
+	rm subz.txt
 done < rootdomains.txt
 }
 subsearch
 
 #################################################################################
+
 echo $GRN " | Grabbing IP Addresses of subdomains  . . . |"
 echo $BLUE "- - - - - - - - - - - - - - - - - - - - - -  "
 
@@ -152,10 +155,13 @@ subtko(){
 	while IFS= read -r sub;
 	do
 		dig $sub | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" >> ipz
+		sort ipz | uniq >> ipv4zConfirmed.txt
+		rm ipz
 	done < subz.txt
 }
 subtko
 
-echo $GRN "Created mainscope / subz.txt / ipz / and rootdomains.txt for review."
+
+echo $GRN "Created mainscope / autosubz.txt / ipv4zConfirmed.txt / and rootdomains.txt for review."
 
 #################################################################################
