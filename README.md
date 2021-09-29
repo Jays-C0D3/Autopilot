@@ -14,7 +14,7 @@ It will also save scope find root/sub-domains and the current IPv4 of the subdom
 
 <h1>Created Files:</h1>
         
-            1.) mainscope
+            1.) bountyscope
             2.) rootdomains.txt
             3.) subz.txt
             4.) ipz
