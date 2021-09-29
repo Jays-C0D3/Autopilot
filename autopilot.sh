@@ -161,7 +161,12 @@ subtko(){
 }
 subtko
 
+mainclean(){
+	sort mainscope| uniq >> bountyscope
+	rm mainscope
+}
+mainclean
 
-echo $GRN "Created mainscope / autosubz.txt / ipv4zConfirmed.txt / and rootdomains.txt for review."
+echo $GRN "Created bountyscope / autosubz.txt / ipv4zConfirmed.txt / and rootdomains.txt for review."
 
 #################################################################################
