@@ -16,7 +16,7 @@ It will also save scope find root/sub-domains and the current IPv4 of the subdom
         
             1.) bountyscope
             2.) rootdomains.txt
-            3.) subz.txt
+            3.) autosubz.txt
             4.) ipz
 
 YOU MAY MAKE ANY CHANGES TO FIT YOUR SPECIFIC NEEDS AND IF YOU WOULD LIKE TO COMMIT PLEASE FEEL FREE TO MAKE A REQUEST.
