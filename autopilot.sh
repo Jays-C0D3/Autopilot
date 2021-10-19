@@ -157,7 +157,7 @@ subtko(){
 		dig $sub | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" >> ipz
 		sort ipz | uniq >> ipv4zConfirmed.txt
 		rm ipz
-	done < subz.txt
+	done < autosubz.txt
 }
 subtko
 
