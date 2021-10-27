@@ -20,10 +20,5 @@ It will also save scope find root/sub-domains and the current IPv4 of the subdom
             4.) ipz
 
 YOU MAY MAKE ANY CHANGES TO FIT YOUR SPECIFIC NEEDS AND IF YOU WOULD LIKE TO COMMIT PLEASE FEEL FREE TO MAKE A REQUEST.
-
-
-
-Please support and lets learn more together:
-    https://twitter.com/n00b_n00b_
     
 </html>
