@@ -26,6 +26,7 @@ echo $BLUE "____________________________________________________________________
 maintain() {
 	apt update && apt upgrade -y
 	apt autoremove -y
+	rm autosubz.txt bountyscope rootdomains.txt ipv4zConfirmed.txt
 }
 maintain
 
@@ -70,7 +71,7 @@ echo $PURP "%--%-%--%--%-%--%-%--"
 sleep 1.2
 echo $PURP "%--%-%--%--%-%--%-%--%"
 
-bbscope h1 -t $h1auth -u $username -c url -b -o t >> scope
+bbscope h1 -t $h1key -u $username -c url -b -o t >> scope
 
 echo $BLUE "___________________________________________"
 echo $BLUE "--- UPDAT3D H1 SCOP3s STR3VMING N0W --- ;P "
@@ -79,12 +80,12 @@ echo $BLUE "___________________________________________"
 while IFS= read -r line;
 do
     echo $GRN $line
-	sleep 2.5
+        sleep 1.3
 done < scope
 
 clean_0(){
-	sort scope | uniq >> mainscope
-	rm scope
+        sort -u scope >> mainscope
+        rm scope
 }
 clean_0
 
@@ -94,9 +95,11 @@ echo $BLUE "________ - - - 00000000 - - - ____________ "
 echo $BLUE "________Looking 4 root domains____________ "
 
 presubTKO(){
-	grep "*." mainscope >> roughroots.txt
-	awk -F\. '{print $(NF-1) FS $NF}' roughroots.txt >> rootdomains.txt
-	rm roughroots.txt
+        grep "*." mainscope >> roughroots.txt
+        awk -F\. '{print $(NF-1) FS $NF}' roughroots.txt >> rootdoms.txt
+        rm roughroots.txt
+        sort -u rootdoms.txt >> rootdomains.txt
+        rm rootdoms.txt
 }
 presubTKO
 
@@ -139,9 +142,9 @@ sleep 1.3
 subsearch(){
 while IFS= read -r root;
 do
-	subfinder -v -nW -d $root -o subz.txt
-	sort subs.txt | uniq >> autosubz.txt
-	rm subz.txt
+        subfinder -v -nW -d $root -o subz.txt
+        sort -u subz.txt >> autosubz.txt
+        rm subz.txt
 done < rootdomains.txt
 }
 subsearch
@@ -152,18 +155,18 @@ echo $GRN " | Grabbing IP Addresses of subdomains  . . . |"
 echo $BLUE "- - - - - - - - - - - - - - - - - - - - - -  "
 
 subtko(){
-	while IFS= read -r sub;
-	do
-		dig $sub | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" >> ipz
-		sort ipz | uniq >> ipv4zConfirmed.txt
-		rm ipz
-	done < autosubz.txt
+        while IFS= read -r sub;
+        do
+                dig $sub | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" >> ipz
+                sort -u ipz >> ipv4zConfirmed.txt
+                rm ipz
+        done < autosubz.txt
 }
 subtko
 
 mainclean(){
-	sort mainscope| uniq >> bountyscope
-	rm mainscope
+        sort -u mainscope >> bountyscope
+        rm mainscope
 }
 mainclean
 
