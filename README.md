@@ -10,7 +10,7 @@ Kudos to https://twitter.com/sw33tLie. Please note that he is the creator of bbs
 
 PLEASE BE AWARE THAT THIS CODE IS TO PROVIDE A REAL TIME STREAM OF H1 BUGBOUNTY SCOPES IN TERMINAL. 
 
-It will also save scope find root/sub-domains and the current IPv4 of the subdomains in the specified files.
+It will also save scope, find root/sub-domains, and the current IPv4 of the subdomains in the specified files.
 
 <h1>Created Files:</h1>
         
