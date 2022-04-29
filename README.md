@@ -4,7 +4,7 @@
 Kudos to https://twitter.com/sw33tLie. Please note that he is the creator of bbscope https://github.com/sw33tLie/bbscope which must be installed along with subfinder and moved to /usr/bin. Follow instructions below:
     
 
-                go install github.com/sw33tLie/bbscope@latest
+                go get github.com/sw33tLie/bbscope@latest
                 apt install subfinder or GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 
 
