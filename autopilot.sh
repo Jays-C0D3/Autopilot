@@ -71,7 +71,7 @@ echo $PURP "%--%-%--%--%-%--%-%--"
 sleep 1.2
 echo $PURP "%--%-%--%--%-%--%-%--%"
 
-bbscope h1 -t $h1key -u $username -c url -b -o t >> scope
+bbscope h1 -u $username -t $h1key -c url -b -o t >> scope
 
 echo $BLUE "___________________________________________"
 echo $BLUE "--- UPDAT3D H1 SCOP3s STR3VMING N0W --- ;P "
